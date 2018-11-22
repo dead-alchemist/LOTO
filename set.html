@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<link rel='stylesheet prefetch' href='css/materializebeta.min.css'>
+<script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+  <style>
+    body{
+      padding: 0;margin: 0;background-color: #14161d
+    }
+   .bottlecard{
+      border-radius: 10px;background-color: #000;box-shadow: 2px 2px 7px -2px rgba(0,0,0,0.7);color: #fff;text-align: center;padding: 10px;
+    }
+    .bottlecard > p {
+      text-align: left;padding-left: 10px;padding-right: 10px;margin-bottom: 5px;margin-top: 20px
+    }
+    .bottleicon{
+      width: 100px;background-image: url(img/bottle/7.png);background-size: cover;height: 100px;margin: auto;font-size: 28px;padding-top: 40px
+    }
+  </style>
+</head>
+<body>
+  <div id="bottleno" style="display: none"></div>
+ <div class="carousel" id="carousel">
+    <a id="bottle1" class="carousel-item" href="#one!">
+      <div class="bottlecard">
+        <div style="display: none" id="drink1"></div>
+      <div class="bottleicon" id="bottleno1">1</div>
+      <p><span id="qty1"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>
+    </a>
+    <a class="carousel-item" href="#two!">
+      <div class="bottlecard">
+          <div style="display: none" id="drink2"></div>
+          <div class="bottleicon" id="bottleno2">2</div>
+          <p><span id="qty2"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>
+     </a>
+    <a class="carousel-item" href="#three!">
+        <div class="bottlecard">
+            <div style="display: none" id="drink3"></div>
+            <div class="bottleicon" id="bottleno3">3</div>
+            <p><span id="qty3"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>      
+    </a>
+    <a class="carousel-item" href="#four!">
+        <div class="bottlecard">
+            <div style="display: none" id="drink4"></div>
+            <div class="bottleicon" id="bottleno4">4</div>
+            <p><span id="qty4"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>      
+    </a>
+    <a class="carousel-item" href="#five!">
+        <div class="bottlecard">
+            <div style="display: none" id="drink5"></div>
+            <div class="bottleicon" id="bottleno5">5</div>
+            <p><span id="qty5"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>      
+    </a>
+        <a class="carousel-item" href="#six!">
+         <div class="bottlecard">
+            <div style="display: none" id="drink6"></div>
+            <div class="bottleicon" id="bottleno6">6</div>
+            <p><span id="qty6"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>     
+    </a>
+        <a class="carousel-item" href="#seven!">
+        <div class="bottlecard">
+            <div style="display: none" id="drink7"></div>
+            <div class="bottleicon" id="bottleno7">7</div>
+            <p><span id="qty7"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>     
+    </a>
+        <a class="carousel-item" href="#eight!">
+         <div class="bottlecard">
+            <div style="display: none" id="drink8"></div>
+            <div class="bottleicon" id="bottleno8">8</div>
+            <p><span id="qty8"></span> ml <img src="img/reload.png" style="width: 20px;float: right;vertical-align: middle;"></p>
+       </div>     
+    </a>
+  </div>
+  
+  <div id="supply" style="padding: 50px;padding-top: 0px;padding-bottom: 5px;color: #fff;width: 100%;height: 100%;text-align: center;">
+    <div style="background: linear-gradient(0deg, #0ab7e0, #00dab2);color: #fff;display: inline-block;padding: 3px 10px 3px 10px;font-size: 13px;border-radius: 50px;vertical-align: middle;margin-left:10px;margin-bottom: 0px">Edit Bottle</div>
+         <div class="input-field col s6">
+          <input id="ing_name" placeholder="Ingredient Name" type="text" class="autocomplete" style="color: #fff">
+        </div>
+        <div class="input-field col s6">
+          <input id="ing_qty" placeholder="Ingredient Quantity" type="number" class="validate" style="color: #fff">
+
+        </div>
+        <div class="waves-effect" onclick="parent.save()" style="background-color: #00d9b1;box-shadow: 2px 2px 7px -2px rgba(0,0,0,0.7);padding: 10px;border-radius: 3px;width: 70%;margin: auto;"><img src="img/check.png" style="width: 25px"></div>
+  </div>
+<script src='js/materializebeta.min.js'></script>
+    <script>
+      $(document).ready(function(){
+      $('.carousel').carousel({
+        indicators:true,
+        noWrap:true,
+        duration: 120,
+        onCycleTo: function(data) {
+        var page = String(data);
+        switch(page.slice(-3)){
+          case "ne!" : $('#ing_name').val($('#drink1').text());$('#ing_qty').val($('#qty1').text());$('#bottleno').text("1");break;
+          case "wo!" : $('#ing_name').val($('#drink2').text());$('#ing_qty').val($('#qty2').text());$('#bottleno').text("2");break;
+          case "ee!" : $('#ing_name').val($('#drink3').text());$('#ing_qty').val($('#qty3').text());$('#bottleno').text("3");break;
+          case "ur!" : $('#ing_name').val($('#drink4').text());$('#ing_qty').val($('#qty4').text());$('#bottleno').text("4");break;
+          case "ve!" : $('#ing_name').val($('#drink5').text());$('#ing_qty').val($('#qty5').text());$('#bottleno').text("5");break;
+          case "ix!" : $('#ing_name').val($('#drink6').text());$('#ing_qty').val($('#qty6').text());$('#bottleno').text("6");break;
+          case "en!" : $('#ing_name').val($('#drink7').text());$('#ing_qty').val($('#qty7').text());$('#bottleno').text("7");break;
+          case "ht!" : $('#ing_name').val($('#drink8').text());$('#ing_qty').val($('#qty8').text());$('#bottleno').text("8");break;
+        }  
+      }
+      });
+
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+
+      },
+    });
+  });
+function updatecard(){
+  $('#ing_name').val($('#drink1').text());$('#ing_qty').val($('#qty1').text());
+}
+function updatebottleicon(q,w){
+  if(percent>90){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/0.png')";
+    }else if(percent>80){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/1.png')";
+    }else if(percent>70){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/2.png')";
+    }else if(percent>60){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/3.png')";
+    }else if(percent>50){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/4.png')";
+    }else if(percent>30){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/5.png')";
+    }else if(percent>10){
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/6.png')";
+    }else{
+        document.getElementById('bottleno'+(zi+1)).style.backgroundImage="url('img/bottle/7.png')";
+    }
+}
+    </script>
+</body>
+
+</html>

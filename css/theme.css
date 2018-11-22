@@ -1,0 +1,190 @@
+﻿html {
+    height: 100%;
+}
+body{
+	margin:0;padding:0;
+	height: 100%;
+	font-family: 'Segoe UI', Calibri;
+	font-size: 14px;
+
+
+}
+div{
+	margin: 0;padding:0;
+}
+table{
+	margin:0;padding:0;
+}
+td{
+	text-align: center ;
+}
+.buttonlarge{
+	width:70%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #e75721;
+	text-align: center ;
+	font-size: 20px;
+	font-family: "Segoe UI Light";
+	margin: auto;
+	border-radius:50px 50px 50px 50px;
+	outline:none;
+	vertical-align: middle;
+}
+.buttonlarge:hover{
+background-color: #000;
+border:3px #e75721 solid;
+}
+.connect{
+	background: linear-gradient(0deg, #358ddd, #28bdbf);outline: none;color: #ffffff;border:0px;font-family: "Segoe UI Light"; border-radius:10px;font-size: 16px;
+}
+.connect:hover{
+	background-color:#333;outline: none;color: #ffffff;
+}
+.fold{
+	display: none;
+}
+.scrollbar
+{
+	float: left;
+	height: 300px;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+#wrapper
+{
+	text-align: center;
+	margin: auto;
+}
+
+/*
+ *  STYLE 9
+ */
+
+#style-9::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-9::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+#style-9::-webkit-scrollbar-thumb
+{
+	background-color: #F90;
+	background-image: -webkit-linear-gradient(90deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+input[type=radio] {
+    background-color: #999;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    width: 20px;
+    -webkit-appearance: none;
+    outline: none;
+}
+input[type=radio]:after {
+    background-color: #fff;
+    border-radius: 25px;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 2px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+}
+input[type=radio]:checked:after {
+    background-color: #28bdbf;
+}
+.state {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: auto;
+}
+.refresh{
+	    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: ease-out 0.5s;
+    transition: ease-in 0.5s;
+
+
+}
+.refresh:hover{
+	    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    transition: ease-out 0.5s;
+    transition: ease-in 0.5s;
+
+}
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -135px;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    bottom: 30px;
+    border-radius:50px 50px 50px 50px;
+    font-size: 14px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
