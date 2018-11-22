@@ -1,2 +1,2 @@
 # LOTO
-Cordova Bluetooth connection - Deo App
+Cordova Bluetooth connection - Demo App
